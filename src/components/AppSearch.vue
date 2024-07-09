@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid p-5">
+  <div class="p-5">
     <select class="filter" name="filter" id="filter">
       <option value="">select filter...</option>
     </select>

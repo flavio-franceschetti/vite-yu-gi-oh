@@ -1,12 +1,14 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppSearch from "./components/AppSearch.vue";
+import CardsList from "./components/CardsList.vue";
 
 export default {
   name: "App",
   components: {
     AppHeader,
     AppSearch,
+    CardsList,
   },
 };
 </script>
@@ -15,8 +17,9 @@ export default {
   <header>
     <AppHeader />
   </header>
-  <main>
+  <main class="container-fluid p-4">
     <AppSearch />
+    <CardsList />
   </main>
 </template>
 
