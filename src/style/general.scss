@@ -1,0 +1,16 @@
+// inclusione file variables
+@use "./partials/variables" as *;
+
+// inclusione bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// inclusione font montserrat
+@import "@fontsource-variable/montserrat";
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: $main-font;
+}
