@@ -37,9 +37,24 @@ export default {
           console.log(error);
         });
     },
+
+    getArchetype() {
+      axios
+        .get(store.apiArchetypesURL)
+        .then(function (response) {
+          // handle success
+          store.archetypesList = response.data;
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    },
   },
   created() {
     this.getCards();
+    this.getArchetype();
   },
 };
 </script>
@@ -49,7 +64,7 @@ export default {
     <AppHeader />
   </header>
   <main class="container-fluid p-4">
-    <AppSearch />
+    <AppSearch @filter="getCards" />
     <CardsList />
   </main>
 </template>
