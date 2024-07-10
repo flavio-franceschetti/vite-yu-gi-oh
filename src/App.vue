@@ -24,8 +24,15 @@ export default {
   },
   methods: {
     getCards() {
+      let endPoint = store.apiURL;
+      store.loading = true;
+
+      // quando viene selezionato l archetipo dal filtro aggiungiamo una richiesta
+      if (store.cardFilter !== "") {
+        endPoint += `&${store.apiCardArchetype}=${store.cardFilter}`;
+      }
       axios
-        .get(store.apiURL)
+        .get(endPoint)
         .then(function (response) {
           // handle success
           console.log(response.data.data);
@@ -35,6 +42,7 @@ export default {
         .catch(function (error) {
           // handle error
           console.log(error);
+          store.loading = false;
         });
     },
 

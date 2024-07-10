@@ -8,5 +8,5 @@ export const store = reactive({
   loading: true,
   // elementi per filtrare le carte
   cardFilter: "",
-  apicardarchetype: "archetype",
+  apiCardArchetype: "archetype",
 });

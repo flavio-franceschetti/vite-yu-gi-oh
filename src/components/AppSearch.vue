@@ -20,7 +20,12 @@ export default {
       name="filter"
       id="filter"
     >
-      <option v-for="archetype in store.archetypesList" value="">
+      <option value="">sleziona il tipo...</option>
+      <option
+        v-for="(archetype, index) in store.archetypesList"
+        :key="index"
+        :value="archetype.archetype_name"
+      >
         {{ archetype.archetype_name }}
       </option>
     </select>
