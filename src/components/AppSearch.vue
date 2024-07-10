@@ -7,7 +7,7 @@ export default {
 <template>
   <div class="p-5">
     <select class="filter" name="filter" id="filter">
-      <option value="">select filter...</option>
+      <option value="">select archetype...</option>
     </select>
   </div>
 </template>

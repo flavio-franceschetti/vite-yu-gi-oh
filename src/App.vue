@@ -30,6 +30,7 @@ export default {
           // handle success
           console.log(response.data.data);
           store.cardsList = response.data.data;
+          store.loading = false;
         })
         .catch(function (error) {
           // handle error

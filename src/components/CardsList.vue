@@ -1,11 +1,13 @@
 <script>
 import AppCards from "./AppCards.vue";
+import AppLoader from "./AppLoader.vue";
 import { store } from "../store.js";
 
 export default {
   name: "CardsList",
   components: {
     AppCards,
+    AppLoader,
   },
 
   data() {
@@ -18,7 +20,7 @@ export default {
 
 <template>
   <div class="card-list mx-5 p-5">
-    <div class="row">
+    <div v-if="!store.loading" class="row">
       <div
         v-for="(card, index) in store.cardsList"
         :key="index"
@@ -28,6 +30,7 @@ export default {
         <AppCards :cardInfo="card" />
       </div>
     </div>
+    <AppLoader v-else />
   </div>
 </template>
 
