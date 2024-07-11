@@ -60,9 +60,10 @@ export default {
         });
     },
   },
+
   created() {
-    this.getCards();
     this.getArchetype();
+    this.getCards();
   },
 };
 </script>

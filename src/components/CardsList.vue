@@ -15,12 +15,20 @@ export default {
       store,
     };
   },
+
+  computed: {
+    cardresult() {
+      return store.cardsList.length;
+    },
+  },
 };
 </script>
 
 <template>
   <div class="card-list mx-5 p-5">
-    <div class="p-3 mb-2 bg-dark text-white">Carte trovate 20</div>
+    <div class="p-3 mb-2 bg-dark text-white">
+      Carte trovate {{ cardresult }}
+    </div>
     <div v-if="!store.loading" class="row">
       <div
         v-for="(card, index) in store.cardsList"
